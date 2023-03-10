@@ -14,9 +14,9 @@ const Board=()=>{
 	const navigate = useNavigate();
 
 	useEffect(()=>{
-
 		toggle ? navigate('playground', { state: { timer, size } }):console.log("");
-	},[toggle]);
+		console.log(timer,size);
+	},[size][timer]);
 
 
 	return(
@@ -46,9 +46,7 @@ const Board=()=>{
 							<input name="size" id='size_3' type="radio"/>
 							<label onClick={()=>{setSize(prev=>prev=80)}} htmlFor='size_3'>80px</label>
 						</div>
-						<Link to={"playground"}>
 							<button onMouseDown={()=>setToggle(prev=>prev=true)}>Start the game!</button>
-						</Link>
 					</div>
 				</div>
 			</div>
