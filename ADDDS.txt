@@ -1,0 +1,13 @@
+add(
+	$SetTime
+	$Favicon
+	$title
+	Finish panel	
+	dot Size changer
+	
+	Advanced(
+		ThemeChanger
+		
+	)
+
+)

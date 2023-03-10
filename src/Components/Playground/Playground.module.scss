@@ -1,0 +1,110 @@
+.wrapper{
+	height: 100%;
+	width:100%;
+	position: relative;
+	background: #A3E4D7;
+	display: block;
+	overflow: hidden;
+	.dot{
+		position: absolute;
+		left: 1%;
+		top:2%;
+		transform: translate(-50%,-50%);
+		width: 30px;
+		height:30px;
+		border-radius: 50%;
+		background: red;
+		transition:0.1s all;
+		z-index: 1;	
+		&:hover{
+			background: darkred;
+		}
+		&:active{
+			background: lime;
+			outline:1px solid red;
+		}
+	}
+	.score{
+		position: absolute;
+		left:92%;
+		top: 3%;
+		opacity: 0.7;
+		-webkit-user-select: none;
+		@media(max-width: 800px){
+			left: 80%;
+		}
+		@media(max-width: 350px){
+			left: 70%;
+		}
+	}
+	.timer{
+		position: absolute;
+		left:92%;
+		top: 6%;
+		opacity: 0.7;
+		-webkit-user-select: none;
+		@media(max-width: 800px){
+			left: 80%;
+		}
+		@media(max-width: 350px){
+			left: 70%;
+		}
+	}
+	.toggleTimer{
+		position: absolute;
+		left:90%;
+		top: 9%;
+		opacity: 0.7;
+		cursor: pointer;
+		transition: 0.1s all;
+		border:1px blue solid;
+		border-radius: 20px;
+		padding: 10px;
+		color:black;
+		-webkit-user-select: none;
+		@media(max-width: 800px){
+			left: 80%;
+		}
+		@media(max-width: 350px){
+			left: 70%;
+		}
+		&:hover{
+			opacity: 1;
+			outline:2px blue solid;
+		}
+		&:active{
+			color:whitesmoke;
+			border:1px blue solid;
+			background: blue;
+		}
+	}
+	.background_score{
+		position: absolute;
+		opacity: 0.2;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 200px;
+		-webkit-user-select: none;
+	}
+	.finish{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
+		font-size: 60px;
+		color:red;
+		text-align: center;
+		width: 100%;
+		@media(max-width: 800px){
+			font-size: 30px;
+		}
+		@media(max-width: 350px){
+			font-size: 15px;
+		}
+		p{
+			width: 100%;
+			text-align: center;
+		}
+	}
+}
