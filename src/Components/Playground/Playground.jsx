@@ -6,7 +6,6 @@ import { Link } from "react-router-dom";
 const Playground=(timer)=>{
 
 	const {state}=useLocation();
-	console.log(state);
 
 	const ttime=state.timer;
 	const size=state.size;
@@ -45,7 +44,7 @@ const Playground=(timer)=>{
 
 
 	const posStyle={
-		left:`${onLeft}`+"%",
+		left:`${onLeft}`+`%`,
 		top:`${onTop}`+"%",
 		width:`${size}`+"px",
 		height:`${size}`+"px",

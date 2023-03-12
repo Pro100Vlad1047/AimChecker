@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 
 const Board=()=>{
 	
-	const [timer,setTimer]=useState(30);
+	const [timer,setTimer]=useState(45);
 	const [size,setSize]=useState(30);
 	const [toggle,setToggle]=useState(false);
 
@@ -18,35 +18,44 @@ const Board=()=>{
 		console.log(timer,size);
 	},[size][timer]);
 
+	const TimerSetting=(e)=>{
+		setTimer(prev=>prev=Number(e.target.value));
+	}
+
+	const SizeSetting=(e)=>{
+		setSize(prev=>prev=Number(e.target.value));
+	}
+
 
 	return(
 		<div className={s.wrapper}>
 			<div className={s.board}>
-				<h1>Welcome to our AimChecker site</h1>
+				<h1>Welcome to our AimBot site</h1>
 				<div className={s.settings_block}>
 					<p>Check your set up</p>
 					<div className={s.setTime}>
 						<div className={s.timeSetInput}>
 							<p>Set timer:</p>
-							<input name="range" id='timer' type="radio"/>
-							<label onClick={()=>{setTimer(prev=>prev=30)}} htmlFor='timer'>30s</label>
-							<input name="range" id='timer_2' type="radio"/>
-							<label onClick={()=>{setTimer(prev=>prev=60)}} htmlFor='timer_2'>60s</label>
-							<input name="range" id='timer_3' type="radio"/>
-							<label onClick={()=>{setTimer(prev=>prev=90)}} htmlFor='timer_3'>90s</label>
+							<input onChange={TimerSetting} value={timer} id="timer" list="markers" type="range" min="30" max="90"/>
+							<label htmlFor="timer">{timer}</label>
+							<datalist id="markers">
+							  <option value="45"></option>
+							  <option value="60"></option>
+							  <option value="75"></option>
+							</datalist>
 						</div>
 						<div className={s.timeSetInput}>
 							<p>Set size:</p>
-							<input name="size" id='size' type="radio"/>
-							<label onClick={()=>{setSize(prev=>prev=30)}} htmlFor='size'>30px</label>
-							<input name="size" id='size_1' type="radio"/>
-							<label onClick={()=>{setSize(prev=>prev=40)}} htmlFor='size_1'>40px</label>
-							<input name="size" id='size_2' type="radio"/>
-							<label onClick={()=>{setSize(prev=>prev=50)}} htmlFor='size_2'>50px</label>
-							<input name="size" id='size_3' type="radio"/>
-							<label onClick={()=>{setSize(prev=>prev=80)}} htmlFor='size_3'>80px</label>
+							<input onChange={SizeSetting} id="size" value={size} list="markers_1" type="range" min="10" max="120"/>
+							<label htmlFor="size">{size}</label>
+							<datalist id="markers_1">
+							  <option value="30"></option>
+							  <option value="60"></option>
+							  <option value="90"></option>
+							  <option value="110"></option>
+							</datalist>
 						</div>
-							<button onMouseDown={()=>setToggle(prev=>prev=true)}>Start the game!</button>
+							<button onClick={()=>setToggle(prev=>prev=true)}>Start the game!</button>
 					</div>
 				</div>
 			</div>
